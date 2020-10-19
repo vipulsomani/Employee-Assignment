@@ -27,5 +27,11 @@ public class EmployeerServiceImpl implements EmployeerService {
 	public void saveEmployee(Employee theEmployee) {
 		employeeDAO.saveEmployee(theEmployee);
 	}
+	@Override
+	@Transactional
+	public Employee geEmployee(int theId) {
+		// TODO Auto-generated method stub
+		return employeeDAO.getEmployee(theId);
+	}
 
 }

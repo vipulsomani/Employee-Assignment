@@ -15,7 +15,7 @@
 	</div>
 	<div>
 		<form:form action="saveEmployee" modelAttribute="employee" method="POST">
-		
+			<form:hidden path="id"/>
 		<table>
 			<tr>
 			<td><label>Id</label></td>
@@ -24,6 +24,10 @@
 			<tr>
 			<td><label>Name</label></td>
 			<td><form:input path="name"/></td>
+			</tr>
+			<tr>
+			<td><label>Cloud Tech</label></td>
+			<td><form:input path="cloud_tech"/></td>
 			</tr>
 			<tr>
 			<td><label></label></td>

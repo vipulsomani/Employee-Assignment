@@ -9,4 +9,6 @@ public interface EmployeerService {
 	public List<Employee> geEmployee();
 
 	public void saveEmployee(Employee theEmployee);
+
+	public Employee geEmployee(int theId);
 }

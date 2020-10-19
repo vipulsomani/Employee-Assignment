@@ -16,15 +16,29 @@
 	<input type="button" value="Add Employee"
 	onclick="window.location.href='showFormForAdd';return false;"/>
 	<div>
-		<table>
+		<table border=1>
 			<tr>
-			<th>Id</th>
-			<th>Name</th>
+			<th><a href="window.location.href='orderById';return false;">Id</a></th>
+			<th><a href="window.location.href='orderByFirstName';return false;">First Name</a></th>
+			<th>Cloud Tech</th>
+			<th>Action</th>
+			
+			
 			</tr>
 			<c:forEach var="tempEmployee" items="${employees}">
+			<c:url var="updateLink" value="/employee/showFormForUpdate">
+				<c:param name="employeeId" value="${tempEmployee.id }"></c:param>
+			</c:url>
 				<tr>
+				
 					<td> ${tempEmployee.id }</td>
-					<td> ${tempEmployee.name }</td>					
+					<td> ${tempEmployee.name }</td>
+					<td> ${tempEmployee.cloud_tech }</td>	
+					<td>
+						<a href="${updateLink }">Edit</a>
+					</td>
+								
+										
 				</tr>				
 			</c:forEach>
 		</table>
