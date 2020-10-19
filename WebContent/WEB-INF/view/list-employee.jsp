@@ -29,6 +29,11 @@
 			<c:url var="updateLink" value="/employee/showFormForUpdate">
 				<c:param name="employeeId" value="${tempEmployee.id }"></c:param>
 			</c:url>
+			
+			
+			<c:url var="deleteLink" value="/employee/delete">
+				<c:param name="employeeId" value="${tempEmployee.id }"></c:param>
+			</c:url>
 				<tr>
 				
 					<td> ${tempEmployee.id }</td>
@@ -36,6 +41,9 @@
 					<td> ${tempEmployee.cloud_tech }</td>	
 					<td>
 						<a href="${updateLink }">Edit</a>
+						|
+						<a href="${deleteLink }">Delete</a>
+						
 					</td>
 								
 										

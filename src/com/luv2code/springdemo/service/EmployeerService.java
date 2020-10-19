@@ -11,4 +11,6 @@ public interface EmployeerService {
 	public void saveEmployee(Employee theEmployee);
 
 	public Employee geEmployee(int theId);
+
+	public void deleteEmployee(int theId);
 }
