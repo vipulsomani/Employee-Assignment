@@ -41,21 +41,31 @@ public class EmployeeController {
 		
 		return "employee-form";
 	}
-	@GetMapping("/orderByFirstName")
-	public String orderByFirstName(Model model) {
-		List<Employee> theEmployee = employeeService.geEmployee();	
-		Collections.sort(theEmployee, Employee.empNameComparator);
-		model.addAttribute("employee", theEmployee);	
-			return "list-employee";
-	}
+
 	
 	@GetMapping("/orderById")
 	public String orderById(Model model) {
 		List<Employee> theEmployee = employeeService.geEmployee();	
 		Collections.sort(theEmployee, Employee.empIdComparator);
-		model.addAttribute("employee", theEmployee);	
+		model.addAttribute("employees", theEmployee);	
 			return "list-employee";
 	}
+	@GetMapping("/orderByName")
+	public String orderByFirstName(Model model) {
+		List<Employee> theEmployee = employeeService.geEmployee();	
+		Collections.sort(theEmployee, Employee.empNameComparator);
+		model.addAttribute("employees", theEmployee);
+		System.out.println("inside order by name ");
+			return "list-employee";
+	}
+	@GetMapping("/orderByCloud")
+	public String orderByCloud(Model model) {
+		List<Employee> theEmployee = employeeService.geEmployee();	
+		Collections.sort(theEmployee, Employee.empCloudComparator);
+		model.addAttribute("employees", theEmployee);
+			return "list-employee";
+	}
+	
 	@GetMapping("/showFormForUpdate")
 	public String showFormForUpdate(@RequestParam("employeeId") int theId,
 										Model theModel){

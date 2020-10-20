@@ -63,6 +63,17 @@ public class Employee {
 		}
 			
 	};
+	public static Comparator<Employee> empCloudComparator = new Comparator<Employee>() {
+
+		@Override
+		public int compare(Employee e1, Employee e2) {
+			String emp1 =  e1.getCloud_tech().toLowerCase();
+			String emp2 = e2.getCloud_tech().toLowerCase();
+			
+			return 	emp1.compareTo(emp2);
+		}
+			
+	};
 	
 	public static Comparator<Employee> empIdComparator = new Comparator<Employee>() {
 

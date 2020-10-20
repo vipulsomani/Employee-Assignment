@@ -18,9 +18,9 @@
 	<div>
 		<table border=1>
 			<tr>
-			<th><a href="window.location.href='orderById';return false;">Id</a></th>
-			<th><a href="window.location.href='orderByFirstName';return false;">First Name</a></th>
-			<th>Cloud Tech</th>
+			<th>Id <a href="${pageContext.request.contextPath }/employee/orderById">^</a></th>
+			<th>Name<a href="${pageContext.request.contextPath }/employee/orderByName">^</a></th>
+			<th>Cloud Tech<a href="${pageContext.request.contextPath }/employee/orderByCloud">^</a></th>
 			<th>Action</th>
 			
 			
